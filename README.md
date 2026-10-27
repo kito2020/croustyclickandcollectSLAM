@@ -20,7 +20,7 @@ Projet réalisé en équipe, en méthode Scrum, dans le cadre du **BTS SIO optio
 
 | Prénom Nom | Pseudo GitHub | Scrum Master au sprint |
 |---|---|---|
-| _Sébastien Esparza_ | _kito2020_ | _Sébastien_ |
+| _Sébastien Esparza_ | _kito2020_ | _Sébastien S1-01_ |
 
 ---
 
