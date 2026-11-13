@@ -11,12 +11,10 @@ namespace CroustyClickCollect.Controllers;
 public class RestaurantsController : Controller
 {
     private readonly RestaurantRepository _restaurants;
-    private readonly HorairesService _horairesService;
 
-    public RestaurantsController(RestaurantRepository restaurants, HorairesService horairesService)
+    public RestaurantsController(RestaurantRepository restaurants)
     {
         _restaurants = restaurants;
-        _horairesService = horairesService;
     }
 
     // Adresse : /Restaurants
@@ -28,7 +26,10 @@ public class RestaurantsController : Controller
 
         foreach (var r in restaurants)
         {
-            r.EstOuvertMaintenant = _horairesService.EstOuvert(r, heureActuelle);
+            r.EstOuvertMaintenant = HorairesService.EstOuvert(
+                r.HeureOuverture,
+                r.HeureFermeture,
+                heureActuelle);
         }
 
         return View(restaurants);
