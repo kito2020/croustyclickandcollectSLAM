@@ -70,6 +70,8 @@ Ouvrez **phpMyAdmin** (bouton **Admin** de la ligne MySQL dans XAMPP, ou http://
 2. onglet **Importer** → `sql/02-donnees.sql` → **Importer** (ajoute les restaurants, la carte, les comptes de test) ;
 3. onglet **Importer** → `sql/03-utilisateur-app.sql` → **Importer** (crée le compte MySQL utilisé par le site).
 
+Si votre base existe déjà et que vous ne souhaitez pas la recréer, importez uniquement `sql/04-coordonnees-restaurants.sql` pour ajouter les coordonnées nécessaires à la carte.
+
 > Le script `01-schema.sql` supprime la base `crousty` si elle existe déjà : phpMyAdmin vous demande de confirmer. C'est normal. Relancer les 3 scripts permet de repartir d'une base propre à tout moment.
 
 ### 4. Créer le fichier `.env`

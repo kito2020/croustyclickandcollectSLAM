@@ -15,10 +15,10 @@ USE crousty;
 -- ---------------------------------------------------------------------
 --  Les 3 restaurants pilotes (ouverts 7 jours sur 7, de 11h30 à 23h00)
 -- ---------------------------------------------------------------------
-INSERT INTO restaurant (nom, adresse, code_postal, ville, telephone, heure_ouverture, heure_fermeture) VALUES
-('Tasty Crousty République', '12 rue de l''Exemple',      '75011', 'Paris',      '01 99 00 01 11', '11:30:00', '23:00:00'),
-('Tasty Crousty Gare',       '8 avenue du Prototype',     '69007', 'Lyon',       '04 99 00 02 22', '11:30:00', '23:00:00'),
-('Tasty Crousty Esplanade',  '3 place de la Maquette',    '67000', 'Strasbourg', '03 99 00 03 33', '11:30:00', '23:00:00');
+INSERT INTO restaurant (nom, adresse, code_postal, ville, telephone, heure_ouverture, heure_fermeture, latitude, longitude) VALUES
+('Tasty Crousty République', '12 rue de l''Exemple',      '75011', 'Paris',      '01 99 00 01 11', '11:30:00', '23:00:00', 48.8630, 2.3700),
+('Tasty Crousty Gare',       '8 avenue du Prototype',     '69007', 'Lyon',       '04 99 00 02 22', '11:30:00', '23:00:00', 45.7500, 4.8300),
+('Tasty Crousty Esplanade',  '3 place de la Maquette',    '67000', 'Strasbourg', '03 99 00 03 33', '11:30:00', '23:00:00', 48.5800, 7.7500);
 
 -- ---------------------------------------------------------------------
 --  La carte
