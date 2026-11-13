@@ -1,18 +1,19 @@
 @model List<Restaurant>
 @{
     ViewData["Title"] = "Nos restaurants";
+    List<Restaurant> restaurantsCartographiables = Model.Where(r => r.CoordonneesValides).ToList();
 }
 
 <h1>Nos restaurants</h1>
 
-@if (Model.Count > 0)
+@if (restaurantsCartographiables.Count > 0)
 {
     <h2 class="h4 mt-4">Nous trouver</h2>
     <p class="text-muted">Cliquez sur un repère pour voir les informations du restaurant.</p>
     <div id="carte-restaurants" class="carte-restaurants rounded" role="region" aria-label="Carte des restaurants"></div>
 
     <div class="d-none" id="liste-restaurants-carte">
-        @foreach (Restaurant restaurant in Model)
+        @foreach (Restaurant restaurant in restaurantsCartographiables)
         {
             <div data-nom="@restaurant.Nom"
                  data-adresse="@restaurant.Adresse, @restaurant.CodePostal @restaurant.Ville"
@@ -57,14 +58,14 @@
     }
 </div>
 
-@if (Model.Count > 0)
+@if (restaurantsCartographiables.Count > 0)
 {
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="~/js/restaurants.js" asp-append-version="true"></script>
 }
 
 @section Styles {
-    @if (Model.Count > 0)
+    @if (restaurantsCartographiables.Count > 0)
     {
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     }
