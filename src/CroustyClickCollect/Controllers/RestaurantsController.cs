@@ -11,10 +11,12 @@ namespace CroustyClickCollect.Controllers;
 public class RestaurantsController : Controller
 {
     private readonly RestaurantRepository _restaurants;
+    private readonly HorairesService _horairesService;
 
-    public RestaurantsController(RestaurantRepository restaurants)
+    public RestaurantsController(RestaurantRepository restaurants, HorairesService horairesService)
     {
         _restaurants = restaurants;
+        _horairesService = horairesService;
     }
 
     // Adresse : /Restaurants
@@ -22,10 +24,12 @@ public class RestaurantsController : Controller
     {
         List<Restaurant> restaurants = _restaurants.GetTous();
 
-        // TODO S2-04 (sprint 2) : indiquer pour chaque restaurant s'il est ouvert en ce moment.
-        //   Consigne : pour chaque restaurant de la liste, remplir la propriété
-        //              EstOuvertMaintenant grâce à HorairesService.EstOuvert(...).
-        //   Indice   : une boucle foreach ; l'heure actuelle s'obtient avec DateTime.Now.TimeOfDay.
+        var heureActuelle = DateTime.Now.TimeOfDay;
+
+        foreach (var r in restaurants)
+        {
+            r.EstOuvertMaintenant = _horairesService.EstOuvert(r, heureActuelle);
+        }
 
         return View(restaurants);
     }
