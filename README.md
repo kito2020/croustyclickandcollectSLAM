@@ -20,10 +20,16 @@ Projet réalisé en équipe, en méthode Scrum, dans le cadre du **BTS SIO optio
 
 | Prénom Nom | Pseudo GitHub | Scrum Master au sprint |
 |---|---|---|
+ TODO-S2-MCD
 | _Sébastien Esparza_ | _kito2020_ | _Sébastien S1-01_ |
 | _Rayane Youcef_ | _youcefrayane04_ | _Rayane S1-01_ |
 
 
+
+| _Sébastien Esparza_ | _kito2020_ |_S1_ |
+| _Rayane Youcef_ | _youcefrayane04_ | _S2_ |
+| _Adam Ksoulene_ | _AdamKsoulene_ | _S3_ |
+ main
 ---
 
 ## Ce que fait le site aujourd'hui

@@ -22,10 +22,15 @@ public class RestaurantsController : Controller
     {
         List<Restaurant> restaurants = _restaurants.GetTous();
 
-        // TODO S2-04 (sprint 2) : indiquer pour chaque restaurant s'il est ouvert en ce moment.
-        //   Consigne : pour chaque restaurant de la liste, remplir la propriété
-        //              EstOuvertMaintenant grâce à HorairesService.EstOuvert(...).
-        //   Indice   : une boucle foreach ; l'heure actuelle s'obtient avec DateTime.Now.TimeOfDay.
+        var heureActuelle = DateTime.Now.TimeOfDay;
+
+        foreach (var r in restaurants)
+        {
+            r.EstOuvertMaintenant = HorairesService.EstOuvert(
+                r.HeureOuverture,
+                r.HeureFermeture,
+                heureActuelle);
+        }
 
         return View(restaurants);
     }
