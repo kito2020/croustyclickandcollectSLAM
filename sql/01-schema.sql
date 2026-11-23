@@ -23,7 +23,9 @@ CREATE TABLE restaurant (
     telephone          VARCHAR(20)  NOT NULL,
     heure_ouverture    TIME         NOT NULL,
     heure_fermeture    TIME         NOT NULL,
-    commandes_actives  BOOLEAN      NOT NULL DEFAULT TRUE
+    commandes_actives  BOOLEAN      NOT NULL DEFAULT TRUE,
+    latitude           DECIMAL(10,7) NOT NULL,
+    longitude          DECIMAL(10,7) NOT NULL
 );
 
 -- La carte : plats, suppléments et boissons.
