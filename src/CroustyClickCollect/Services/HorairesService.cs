@@ -14,11 +14,6 @@ public static class HorairesService
     /// </summary>
     public static bool EstOuvert(TimeSpan ouverture, TimeSpan fermeture, TimeSpan heure)
     {
-        // TODO S2-02 (sprint 2) : écrire la règle d'ouverture.
-        //   Consigne : renvoyer true si « heure » est comprise entre l'ouverture (incluse)
-        //              et la fermeture (exclue), false sinon.
-        //   Indice   : deux TimeSpan se comparent avec <, <=, >, >= comme des nombres.
-        //              Les tests de tests/.../HorairesServiceTests.cs vous diront si c'est juste.
-        return false;
+        return heure >= ouverture && heure < fermeture;
     }
 }

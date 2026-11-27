@@ -17,11 +17,8 @@ public class RestaurantRepository
 
     public List<Restaurant> GetTous()
     {
-        // TODO S2-01 (sprint 2) : lire tous les restaurants, triés par nom.
-        //   Consigne : renvoyer la liste des restaurants avec toutes leurs informations.
-        //   Indice   : même principe que ProduitRepository.GetSauces().
         using var connexion = _bdd.CreerConnexion();
-        string sql = "SELECT * FROM restaurant ORDER BY nom";
+        const string sql = "SELECT * FROM restaurant ORDER BY nom";
         return connexion.Query<Restaurant>(sql).ToList();
     }
 
